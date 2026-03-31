@@ -1,5 +1,5 @@
 #  ConnectaTel Customer Analysis
-
+ 
 ##  Objective
 Analyze customer behavior for ConnectaTel to identify usage patterns, segment users, and provide business recommendations to improve telecom plans.
 
