@@ -39,8 +39,11 @@ Key tasks:
 
 ---
 
-### ConnectaTel Customer Analysis
-Business-oriented analysis of telecom customer behavior to identify usage patterns, segmentation, and optimization opportunities.
+##  ConnectaTel Analysis
+
+Customer behavior analysis for a telecom company, including segmentation and business insights.
+
+ [View Project](./connectatel-analysis/)
 
 Tools used:
 - Python (Pandas, NumPy)
