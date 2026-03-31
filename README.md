@@ -39,6 +39,27 @@ Key tasks:
 
 ---
 
+### ConnectaTel Customer Analysis
+Business-oriented analysis of telecom customer behavior to identify usage patterns, segmentation, and optimization opportunities.
+
+Tools used:
+- Python (Pandas, NumPy)
+- Matplotlib & Seaborn
+- Data cleaning and feature engineering
+
+Key tasks:
+- Data cleaning (handling nulls and invalid values)
+- Usage analysis (calls, messages, minutes)
+- Customer segmentation (usage level and age groups)
+- Visualization and outlier detection
+
+Key insights:
+- Most users fall into the medium usage segment
+- High-usage users represent high-value customers
+- Opportunity to optimize telecom plans and increase revenue
+
+---
+
 ## About Me
 
 I am currently developing my skills in data analytics, focusing on Python, data visualization, and business intelligence tools.  
