@@ -46,13 +46,6 @@ Determinar si los retrasos en la entrega (tiempo real vs. tiempo estimado) impac
 - Lo que mencionaría en una entrevista: el proceso de ir de "¿hay correlación?" a "¿dónde exactamente se rompe la tolerancia del cliente?" — ese es el tipo de pregunta de seguimiento que convierte un análisis genérico en un insight accionable para el negocio.
 - Limitación reconocida: el dataset es de 2016-2018 y de un solo país (Brasil), así que la conclusión es un patrón de comportamiento a validar, no una cifra a aplicar directamente a otro contexto.
 
-## 8. Checklist antes de publicar
-- [x] README explica el proyecto sin necesidad de revisar todo el detalle
-- [x] Archivos organizados, sin pruebas sueltas o versiones viejas
-- [x] Sin credenciales ni datos sensibles en el repositorio
-- [x] Link a la fuente original incluido y funcionando
-- [x] Proyecto publicado y accesible (dashboard interactivo)
-- [ ] Link compartido con tu coach
 
 ## Cómo reproducir este análisis
 Los CSV originales de Kaggle (~120MB) no están incluidos en este repo por su tamaño. Para correr los scripts desde cero:
@@ -61,12 +54,15 @@ Los CSV originales de Kaggle (~120MB) no están incluidos en este repo por su ta
 2. Instala dependencias: `pip install pandas`
 3. Corre los scripts en orden: `python scripts/01_explore.py` (perfilado inicial) y luego `python scripts/02_prepare_and_analyze.py` (limpieza + análisis; regenera los CSV de `output/`).
 4. `dashboard.html` ya trae los datos agregados embebidos — no depende de `data/` ni de conexión a internet para funcionar; ábrelo directo en el navegador.
+5. Si prefieres la versión interactiva en Power BI, descarga `olist-delivery_proyecto.pbix` y ábrelo con [Power BI Desktop](https://www.microsoft.com/es-mx/power-platform/products/power-bi/downloads) (gratis) — ya trae los datos y las medidas incluidos, no requiere pasos adicionales de preparación.
 
 ## Estructura de la carpeta
 ```
 olist-delivery-satisfaction/
 ├── README.md
-├── dashboard.html          ← dashboard interactivo (autocontenido)
+├── dashboard.html                      ← dashboard interactivo (autocontenido)
+├── olist-delivery_proyecto.pbix        ← versión Power BI del análisis
+├── olist_delivery_satisfaction.png     ← captura del reporte Power BI
 ├── scripts/
 │   ├── 01_explore.py       ← perfilado de datos
 │   └── 02_prepare_and_analyze.py   ← limpieza, cálculo de retraso, análisis
