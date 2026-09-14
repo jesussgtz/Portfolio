@@ -7,6 +7,10 @@
 - **Link a la fuente original:** https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 - **Link al proyecto publicado:** [Dashboard interactivo](https://claude.ai/code/artifact/8cceafe6-73a9-4491-bb9f-0b61b5e57a03) · también incluido como `dashboard.html` en esta carpeta (ábrelo directo en tu navegador, no necesita internet)
 
+- **Versión Power BI:** también disponible como `olist-delivery_proyecto.pbix` en esta carpeta — mismo análisis recreado en Power BI Desktop (requiere tener la aplicación instalada para abrirlo).
+
+![Vista del reporte en Power BI](olist_delivery_satisfaction.png)
+
 ## 2. Objetivo
 Determinar si los retrasos en la entrega (tiempo real vs. tiempo estimado) impactan negativamente la satisfacción del cliente (`review_score`), y en qué categorías de producto ese efecto es más severo. Esto apoya una decisión de negocio concreta: en qué categorías o rutas logísticas vale la pena invertir para proteger la reputación de los vendedores en la plataforma.
 
