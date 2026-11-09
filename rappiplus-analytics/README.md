@@ -54,32 +54,35 @@ RappiPlus is a subscription-based e-commerce service operating across Latin Amer
 ### Step 3 — Conversion Funnel (SQL · PostgreSQL)
 Built a 6-step funnel using CTEs to track users from session start to purchase.
 
-| Step | Users | Conversion |
-|------|-------|------------|
-| view_item | 7,796 | — |
-| add_to_cart | 7,492 | 96% |
-| begin_checkout | 7,148 | 95% |
-| add_payment_info | 6,598 | **92%** |
-| purchase | 5,268 | **80%** ⚠️ |
+| Event | Unique users | Share of first-visit users |
+|-------|--------------|---------------------------|
+| first_visit | 7,796 | 100.00% |
+| select_item | 7,582 | 97.26% |
+| add_to_cart | 7,634 | 97.92% |
+| begin_checkout | 7,208 | 92.46% |
+| add_payment_info | 6,250 | 80.17% |
+| purchase | 6,240 | 80.04% |
 
-> **Key finding:** The biggest drop-off happens at `add_payment_info → purchase` (92% → 80%). Optimizing the payment step could significantly increase conversion.
+> **Interpretation note:** The SQL counts distinct users independently for each event and divides by first-visit users. It does not verify that events occurred in sequence for each user; the `add_to_cart` count even exceeds `select_item`. Treat these as event-reach rates, not a strict sequential funnel. The largest adjacent count decrease is between `begin_checkout` and `add_payment_info` (7,208 to 6,250), which is a useful area to investigate, not proof of payment-step causation.
 
 ### Step 4 — Cohort Retention (SQL · Window Functions)
 Analyzed weekly cohort retention across 6 months using SQL window functions and visualized results as a heatmap.
 
-> **Key finding:** Retention stabilizes between 30–40% after week 2, suggesting a loyal returning user base but significant first-week churn.
+> **Notebook interpretation:** Retention is described as remaining between 40–44% across cohorts and weeks 1–3. The notebook recommends early reactivation strategies for users who do not return in the first week.
 
 ### Step 5 — A/B Test (Python · statsmodels)
 Tested whether a new checkout UI improved purchase conversion on a 10,000-user experiment (50/50 split).
 
 | Group | Users | Conversions | Rate |
 |-------|-------|-------------|------|
-| Control | 5,000 | ~2,100 | ~42% |
-| Treatment | 5,000 | ~2,130 | ~42.6% |
+| Control | 4,965 | 779 | 15.69% |
+| Treatment | 5,035 | 820 | 16.29% |
 
-- **Z-statistic:** -0.81
-- **p-value:** 0.42
-- **Result:** Fail to reject H₀ — no statistically significant difference. The UI change did not improve conversion.
+- **Absolute difference:** +0.60 percentage points (treatment minus control)
+- **Z-statistic:** -0.8133
+- **p-value:** 0.4161 (two-sided)
+- **Significance level:** 0.05
+- **Result:** Fail to reject H₀. The observed +0.60 pp difference is not statistically significant; the experiment does not provide sufficient evidence that the UI change improved conversion.
 
 ### Step 6 — Executive Dashboard (Power BI)
 Built a 2-page Power BI dashboard with DAX measures, KPI cards, funnel chart, and cohort retention heatmap.
