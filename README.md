@@ -19,9 +19,9 @@ End-to-end analytics project for a subscription e-commerce platform.
 **Key tasks:**
 - Cleaned and validated 25,000+ order records (nulls, duplicates, encoding issues)
 - Calculated core KPIs: Revenue ($51.97M), Profit ($5.97M, 11.5% margin), Ticket Promedio ($2,083)
-- Built a 6-step conversion funnel in PostgreSQL; identified critical drop-off at add_payment_info (92% → 80%)
-- Analyzed weekly cohort retention across 6 months using SQL window functions
-- Ran a two-proportion Z-test on 10,000-user A/B experiment (Z=-0.81, p=0.42)
+- Analyzed six conversion events in PostgreSQL; 80.04% of first-visit users also appear in the purchase event (event counts are not a sequential user-level funnel)
+- Analyzed weekly cohort retention across 6 months using SQL window functions; notebook interpretation reports 40–44% retention across cohorts and weeks 1–3
+- Ran a two-proportion Z-test on 10,000 users: 15.69% control vs. 16.29% treatment (+0.60 pp; Z=-0.8133, p=0.4161), not statistically significant
 - Delivered a two-page Power BI executive dashboard with DAX measures, KPI cards, and cohort heatmap
 
 ---
@@ -80,6 +80,6 @@ Customer behavior analysis for a telecom company, including segmentation and bus
 
 ## About Me
 
-Junior Data Analyst focused on turning raw data into clear business insights. Currently completing a Data Analytics Bootcamp at TripleTen LatAm (2025–2026). Bilingual (Spanish/English). Seeking remote roles in data analytics or business intelligence.
+Junior Data Analyst focused on turning raw data into clear business insights. TripleTen Data Analysis certified (2026). Bilingual (Spanish/English). Seeking remote roles in data analytics or business intelligence.
 
 **Skills:** Python · SQL · Power BI · Excel · EDA · A/B Testing · Cohort Analysis · Funnel Analysis · KPI Reporting
